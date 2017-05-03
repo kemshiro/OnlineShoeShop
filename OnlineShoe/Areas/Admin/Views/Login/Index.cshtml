@@ -1,9 +1,4 @@
-﻿
-@{
-    Layout = null;
-}
-
-@model OnlineShoe.Areas.Admin.Models.LoginModel
+﻿@model OnlineShoe.Areas.Admin.Models.LoginModel
 @{
     Layout = null;
 }
@@ -41,13 +36,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             @Html.AntiForgeryToken()
             @Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })
             <div>
-                @Html.TextBoxFor(model => model.username, new { @class = "form-control", @placeholder = "tài khoản", @autofocus = "autofocus" })
+                @Html.TextBoxFor(model => model.username, new { @class = "form-control1", @placeholder = "tài khoản", @autofocus = "autofocus" })
             </div>
             <div>
-                @Html.PasswordFor(model => model.pass, new { @class = "form-control", @placeholder = "mật khẩu", @type = "password" })
+                @Html.PasswordFor(model => model.pass, new { @class = "form-control1", @placeholder = "mật khẩu", @type = "password" })
             </div>
             <div>
-                @Html.CheckBoxFor(model => model.rememberMe)<a>Nhớ mật khẩu?</a>
+                @Html.CheckBoxFor(model => model.rememberMe, new { @class = "checkbox1"})<a>Nhớ mật khẩu?</a>
             </div>
             <div>
                 <div class="submit"><input type="submit" onclick="myFunction()" value="Đăng nhập"></div>

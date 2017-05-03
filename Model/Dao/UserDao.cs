@@ -20,6 +20,7 @@ namespace Model.Dao
 
         public long insert(User entity)
         {
+            entity.createdDate = DateTime.Now;
             db.User.Add(entity);
             db.SaveChanges();
             return entity.id;
@@ -102,6 +103,11 @@ namespace Model.Dao
                     }
                 }
             }
+        }
+
+        public int countAllUser()
+        {
+            return db.User.Count(x => x.status == true);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model.Dao;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,8 @@ namespace OnlineShoe.Areas.Admin.Controllers
         // GET: Admin/Home
         public ActionResult Index()
         {
+            var dao = new UserDao();
+            ViewBag.NumberUser = dao.countAllUser();
             return View();
         }
     }
