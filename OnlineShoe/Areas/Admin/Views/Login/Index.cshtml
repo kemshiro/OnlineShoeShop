@@ -32,34 +32,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 <body id="login">
     <div class="login-logo">
-        <a href="index.html"><img src="~/Assets/admin/images/logo.png" alt="" /></a>
+        <a href="/Admin/Login/Index"><img src="~/Assets/admin/images/shoe.png" alt="" /></a>
     </div>
-    <h2 class="form-heading">login</h2>
+    <h2 class="form-heading">Đăng nhập</h2>
     <div class="app-cam">
         @using (Html.BeginForm("Login", "Login", FormMethod.Post))
         {
             @Html.AntiForgeryToken()
             @Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })
             <div>
-                @Html.TextBoxFor(model => model.username, new { @class = "form-control", @placeholder = "username", @autofocus = "autofocus" })
+                @Html.TextBoxFor(model => model.username, new { @class = "form-control", @placeholder = "tài khoản", @autofocus = "autofocus" })
             </div>
             <div>
-                @Html.PasswordFor(model => model.pass, new { @class = "form-control", @placeholder = "pass", @type = "password" })
+                @Html.PasswordFor(model => model.pass, new { @class = "form-control", @placeholder = "mật khẩu", @type = "password" })
             </div>
             <div>
-                @Html.CheckBoxFor(model => model.rememberMe)Remember Me?
+                @Html.CheckBoxFor(model => model.rememberMe)<a>Nhớ mật khẩu?</a>
             </div>
-            <div class="submit"><input type="submit" onclick="myFunction()" value="Login"></div>
+            <div>
+                <div class="submit"><input type="submit" onclick="myFunction()" value="Đăng nhập"></div>
+            </div>
             <ul class="new">
-                <li class="new_left"><p><a href="#">Forgot Password ?</a></p></li>
-                <li class="new_right"><p class="sign">New here ?<a href="register.html"> Sign Up</a></p></li>
+                <li class="new_left"><p><a href="#">Quên mật khẩu?</a></p></li>
+                <li class="new_right"><p class="sign">Chưa có tài khoản?<a href="/Admin/User/Create"> Tạo mới</a></p></li>
                 <div class="clearfix"></div>
             </ul>
         }
 
     </div>
     <div class="copy_layout login">
-        <p>Copyright &copy; 2015 Modern. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+        <p>-Edited by k3mShIrO-</p>
     </div>
 </body>
 </html>

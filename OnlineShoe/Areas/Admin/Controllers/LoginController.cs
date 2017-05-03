@@ -1,4 +1,5 @@
 ﻿using Model.Dao;
+using Model.EF;
 using OnlineShoe.Areas.Admin.Models;
 using OnlineShoe.Common;
 using System;
@@ -51,6 +52,18 @@ namespace OnlineShoe.Areas.Admin.Controllers
                 }
             }
             return View("AdminLogin");
+        }
+
+        public ActionResult Detail()
+        {
+            var dao = new UserDao();
+            var userSession = Session[CommonConstants.USER_SESSION] as UserLogin;
+
+
+            string username = userSession.username;
+
+            User user = dao.getById(username);
+            return View(user);
         }
     }
 }

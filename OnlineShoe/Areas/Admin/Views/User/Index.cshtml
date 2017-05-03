@@ -17,7 +17,7 @@
             <div class="panel-body no-padding">
                 <table class="table table-striped">
                     <thead>
-                        <tr class="warning">
+                        <tr class="info">
                             <th>#</th>
                             <th>Tài Khoản</th>
                             <th>Họ Tên</th>
@@ -27,10 +27,11 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
-                            <tr>
+                            <tr id="row_@item.id">
                                 <td>
-                                    <a href="/User/Edit/@item.id">Sửa</a>
-                                    <a href="/User/Delete/@item.id">Xóa</a>
+                                    <a href="/Admin/User/Edit/@item.id">Sửa</a>
+                                    |
+                                    <a href="/Admin/User/Delete/@item.id">Xóa</a>
                                 </td>
                                 <td>@item.username</td>
                                 <td>@item.name</td>
